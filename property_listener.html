@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>property listener</title>
+  </head>
+  <body>
+    <button class="btn1">클릭</button>
+    <script>
+      // 1번
+      const btnEl = document.querySelector("button");
+      //   btnEl.onclick = function(){
+      //     console.log("click");
+      //     btnEl.style.border = "2px solid red"
+      //     btnEl.style.color = "white"
+      //     btnEl.style.backgroundColor = "red"
+      //   }
+      //   2번
+      btnEl.onclick = () => {
+        // console.log("화살표 함수 클릭");
+        //     btnEl.style.border = "2px solid red"
+        //     btnEl.style.color = "white"
+        //     btnEl.style.backgroundColor = "red"
+      };
+      //   3번
+      btnEl.onclick = clickEvent;
+      btnEl1.onclick = clickEvent
+      function clickEvent() {
+        console.log("함수명 클릭");
+      } 
+      
+    </script>
+  </body>
+</html>

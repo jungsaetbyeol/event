@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글자색 변경하기</title>
+    <style>
+      .changeColor {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btnColor">글자색 변경</button>
+    <p class="txtP">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, assumenda quia nisi ullam sunt voluptatum alias
+      consectetur exercitationem, distinctio voluptates odit odio dolores? Magnam beatae sint sunt nihil placeat maxime!
+    </p>
+    <script>
+      // 1. 변수에 저장하기
+      const btnColor = document.querySelector("#btnColor")
+      const txtP = document.querySelector(".txtP")
+      // console.log(btnColor);
+      // btnColor.addEventListener("click" , function(){
+      //     // txtP.style.color = "red"
+      //     txtP.classList.toggle("changeColor")
+      // })
+      // 랜덤으로 글자색 변경하기 [배열로 칼라를 담아두고 사용]
+      btnColor.addEventListener("click" , function(){
+          const colors = ["red", "blue", "green", "pink", "skyblue" ,"yellow","hotpink"];
+          // console.log(Math.random());
+          // console.log(Math.floor((Math.random())));
+          const randomIndex = Math.floor(Math.random() * colors.length);
+          // console.log(randomIndex);
+          const randomColor = colors[randomIndex]
+          // console.log(randomColor);
+          txtP.style.color = randomColor
+          // Math.random() - 0과 1사이에서 무작위 소수를 반환한다.
+          // Math.floor() - 소수점 이하를 버리고 가장 가까운 성수로 내림한다.
+      });
+    </script>
+  </body>
+</html>
