@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>focus이벤트</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: aliceblue;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .login-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        outline: none;
+      }
+      input:focus {
+        border-color: yellowgreen;
+        background-color: wheat;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: blue;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>로그인</h2>
+      <input type="text" id="username" placeholder="아이디 입력" />
+      <input type="password" id="password" placeholder="비밀번호 입력" />
+      <button id="loginBtn">로그인</button>
+    </div>
+    <script>
+      const username = document.querySelector("#username");
+      const userpw = document.querySelector("#password");
+      username.addEventListener("focus", () => {
+        console.log("아이디 입력 필드에 포커스됨");
+        // input.style.borderColor = "blue"
+        username.style.borderColor = "blue"
+      });
+      userpw.addEventListener("focus", () => {
+        console.log("아이디 입력 필드에 포커스됨");
+      });
+      username.addEventListener("blur", () => {
+        console.log("아이디 입력 필드에 blur됨");
+      });
+      userpw.addEventListener("blur", () => {
+        console.log("아이디 입력 필드에 blur됨");
+      });
+    </script>
+  </body>
+</html>
